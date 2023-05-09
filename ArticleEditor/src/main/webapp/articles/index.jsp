@@ -13,7 +13,7 @@
 	<h1>記事一覧画面</h1>
 	<h2><%= msg %></h2>
 	<button type="button">サインアップ</button>
-	<button type="button">ログイン</button>
+	<button type="button" onclick="location.href='/ArticleEditor/users/login.html'">ログイン画面</button>
 	<table>
 		<thead>
 			<tr>
