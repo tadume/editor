@@ -13,7 +13,11 @@
 	<h1>記事一覧画面</h1>
 	<h2><%= msg %></h2>
 	<button type="button" onclick="location.href='/ArticleEditor/users/register.html'">サインアップ</button>
-	<button type="button" onclick="location.href='/ArticleEditor/users/login.html'">ログイン画面</button>
+	<button type="button" onclick="location.href='/ArticleEditor/users/login.html'">ログイン</button>
+	<form action="<%= request.getContextPath() %>/logout" method="get">
+		<input type="submit" value="ログアウト">
+	</form>
+	<button type="button" onclick="location.href='/ArticleEditor/accountindex'">ユーザ一覧</button>
 	<table>
 		<thead>
 			<tr>
