@@ -20,13 +20,15 @@ public class Article extends HttpServlet{
 		String msg = "記事一覧を表示します";
 		ArticleDAO adao = new ArticleDAO();
 		IndexDTO idto = new IndexDTO();
+		
 		if(btn.equals("記事一覧表示")) {
 			idto = adao.select();
+			req.setAttribute("msg", msg);
+			req.setAttribute("idto", idto);
+			RequestDispatcher rd = req.getRequestDispatcher("/articles/index.jsp");
+			rd.forward(req, res);
 		}
 		
-		req.setAttribute("msg", msg);
-		req.setAttribute("idto", idto);
-		RequestDispatcher rd = req.getRequestDispatcher("/articles/index.jsp");
-		rd.forward(req, res);
+
 	}
 }

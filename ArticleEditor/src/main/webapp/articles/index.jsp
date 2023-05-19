@@ -16,7 +16,7 @@
 		<% Object returnAb = session.getAttribute("returnAb"); %>
 		<% if(returnAb != null){ %>
 			<input type="submit" value="ログアウト">
-		</form>
+	</form>
 			<button type="button" onclick="location.href='/ArticleEditor/accountindex'">ユーザ一覧</button>
 		<% }else{ %>
 			<button type="button" onclick="location.href='/ArticleEditor/users/register.html'">サインアップ</button>
@@ -35,7 +35,10 @@
 			%>
 			<tr>
 				<td><%= ib.getTitle() %></td>
-				<td><button type="button">詳細</button></td>
+				<td>
+					<button type="button" onclick="location.href='/ArticleEditor/articles/show.jsp'">詳細</button>
+				</td>
+			</tr>
 			<% } %>
 		</tbody>
 	</table>
