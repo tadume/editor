@@ -18,6 +18,7 @@
 			<input type="submit" value="ログアウト">
 	</form>
 			<button type="button" onclick="location.href='/ArticleEditor/accountindex'">ユーザ一覧</button>
+			<button type="button" onclick="location.href='/ArticleEditor/mypage'">マイページ</button>
 		<% }else{ %>
 			<button type="button" onclick="location.href='/ArticleEditor/users/register.html'">サインアップ</button>
 			<button type="button" onclick="location.href='/ArticleEditor/users/login.html'">ログイン</button>
