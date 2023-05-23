@@ -96,6 +96,11 @@ public class ArticleDAO {
 		return executeSql(sql);
 	}
 	
+	public int create(String title, String text, int user_id) {
+		String sql = "INSERT INTO articles(title, text, user_id) VALUES('" + title + "','" + text + "'," + user_id + ")";
+		return executeSql(sql);
+	}
+	
 	
 	public int executeSql(String sql) {
 		Statement stmt = null;
