@@ -37,7 +37,10 @@
 			<tr>
 				<td><%= ib.getTitle() %></td>
 				<td>
-					<button type="button" onclick="location.href='/ArticleEditor/articles/show.jsp'">詳細</button>
+					<form action="/ArticleEditor/article" method="post">
+						<input type="hidden" name="article_id" value="<%= Integer.toString(ib.getArticle_id()) %>">
+						<input type="submit" name="btn" value="詳細">
+					</form>
 				</td>
 			</tr>
 			<% } %>
