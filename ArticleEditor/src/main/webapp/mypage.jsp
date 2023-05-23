@@ -11,6 +11,9 @@
 </head>
 <body>
 	<h2>ようこそ<%= name %>さん</h2>
+	<form action="/ArticleEditor/articles/create.jsp" method="post">
+		<input type="submit" name="btn" value="記事作成">
+	</form>
 	<h3>記事数：<%= idto.size() %></h3>
 	<table>
 		<thead>
@@ -25,7 +28,10 @@
 			<tr>
 				<td><%= ib.getTitle() %></td>
 				<td>
-					<button type="button" onclick="location.href='/ArticleEditor/articles/show.jsp'">詳細</button>
+					<form action="/ArticleEditor/article" method="post">
+						<input type="hidden" name="article_id" value="<%= Integer.toString(ib.getArticle_id()) %>">
+						<input type="submit" name="btn" value="詳細">
+					</form>
 				</td>
 				<td>
 					<button type="button">編集</button>
