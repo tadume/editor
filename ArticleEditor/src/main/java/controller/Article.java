@@ -36,9 +36,16 @@ public class Article extends HttpServlet{
 			int i = adao.delete(article_id);
 			if(i == 1) {
 				out.println("削除しました。");
-				RequestDispatcher rd = req.getRequestDispatcher("/top.html");
+				RequestDispatcher rd = req.getRequestDispatcher("/mypage.jsp");
 				rd.forward(req, res);
 			}
+		}else if(btn.equals("詳細")) {
+			System.out.println("サーブレットを使用");
+			int article_id = Integer.parseInt(req.getParameter("article_id"));
+			idto = adao.show(article_id);
+			req.setAttribute("idto", idto);
+			RequestDispatcher rd = req.getRequestDispatcher("/articles/show.jsp");
+			rd.forward(req, res);
 		}
 		
 

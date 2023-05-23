@@ -119,6 +119,39 @@ public class ArticleDAO {
 	
 	
 	
+	public IndexDTO show(int article_id) {
+		Statement stmt = null;
+		ResultSet rs = null;
+		IndexDTO idto = new IndexDTO();
+		IndexBean ib = new IndexBean();
+		String sql = "SELECT title, text FROM articles WHERE article_id = " + article_id ;
+		
+		try {
+			connect();
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				ib.setTitle(rs.getString("title"));
+				ib.setText(rs.getString("text"));
+				idto.add(ib);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(stmt != null) stmt.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		disconnect();
+		return idto;
+	}
+	
+	
+	
 	
 	public void disconnect() {
 		try {
